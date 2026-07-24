@@ -1,0 +1,35 @@
+#!/bin/bash
+
+TMP_FOLDER="/tmp"
+ID="$(date +%s)"
+TMP_IMG="$TMP_FOLDER/latexocr_$ID.png"
+
+# Direct path to pix2tex in conda env
+PIX2TEX="$HOME/miniforge3/envs/latexocr/bin/pix2tex"
+
+hyprshot -m region -o "$TMP_FOLDER" -f "latexocr_$ID.png" --silent
+
+COUNT=0
+while [ ! -f "$TMP_IMG" ] && [ $COUNT -lt 50 ]; do
+    sleep 0.1
+    ((COUNT++))
+done
+
+[ ! -f "$TMP_IMG" ] && exit 0
+
+notify-send -h string:x-canonical-private-synchronous:ocr "LaTeX OCR" "Processing..."
+
+# Direct call - no conda run wrapper
+CONTENT=$("$PIX2TEX" "$TMP_IMG" 2>/dev/null | sed 's/^.*: //')
+
+rm -f "$TMP_IMG"
+
+if [ -n "$CONTENT" ]; then
+    notify-send -h string:x-canonical-private-synchronous:ocr "LaTeX OCR" "Copied: $CONTENT"
+    printf '%s' "$CONTENT" | cliphist store
+    ( printf '%s' "$CONTENT" | wl-copy --foreground ) >/dev/null 2>&1 & disown
+else
+    notify-send "LaTeX OCR" "OCR failed"
+fi
+
+exit 0

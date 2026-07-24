@@ -1,0 +1,67 @@
+@import url('/home/nuwa/.cache/wal/colors-waybar.css');
+
+/* 1. Be less aggressive with the universal selector */
+* {
+    /* Removed all:unset; from here to prevent layout jumps */
+    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+window {
+    /* Make the base window invisible so it doesn't show at the rounded corners */
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 2px;
+    padding: 10px;
+    background-color: #1e1e2e;
+    border: 2px solid @color9; 
+    border-radius: 15px;
+}
+
+#scroll {
+    margin: 0px 10px;
+    padding: 0px;
+    /* Force the scroll area to behave */
+    border: none;
+}
+
+#input {
+    margin: 10px 10px 20px 10px; /* Added bottom margin to separate from list */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: @color7;
+}
+
+#inner-box {
+    all: unset; /* Stops GTK from trying to be "helpful" with spacing */
+    display: flex;
+    flex-direction: column;
+}
+
+#entry {
+    /* Use fixed padding and absolutely NO margin */
+    padding: 12px;
+    margin: 0px; 
+    border: none;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: @color9;
+}
+
+/* Ensure the text doesn't have its own hidden height */
+#text {
+    margin: 0px;
+    padding: 0px;
+    color: @color7;
+}
+
+#text:selected {
+    color: #1e1e2e;
+}

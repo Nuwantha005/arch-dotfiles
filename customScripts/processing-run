@@ -1,0 +1,18 @@
+#!/bin/bash
+NATIVES_PATH="/home/nuwa/processing_tmp/natives"
+
+if [ ! -d "$NATIVES_PATH" ] || [ -z "$(ls -A "$NATIVES_PATH")" ]; then
+    mkdir -p "$NATIVES_PATH"
+    cd "$NATIVES_PATH"
+    jar xf /usr/lib/processing/lib/app/gluegen-rt-2.6.0-natives-linux-amd64-*.jar
+    jar xf /usr/lib/processing/lib/app/jogl-all-2.6.0-natives-linux-amd64-*.jar
+    mv natives/linux-amd64/* .
+    rm -rf natives META-INF jogamp
+    cd - > /dev/null
+fi
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS="-Djogamp.gluegen.UseTempJarCache=false -Djava.library.path=$NATIVES_PATH"
+
+# Run the current folder as a sketch
+processing cli --sketch="$(pwd)" --run

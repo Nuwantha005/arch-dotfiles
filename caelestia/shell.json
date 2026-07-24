@@ -1,0 +1,30 @@
+{
+    "bar": {
+        "activeWindow": {
+            "compact": true,
+            "inverted": false
+        },
+        "clock": {
+            "background": false,
+            "showDate": true
+        },
+        "status": {
+            "showAudio": false
+        },
+        "workspaces": {
+            "activeTrail": false,
+            "maxWindowIcons": 5,
+            "occupiedBg": false,
+            "perMonitorWorkspaces": true,
+            "showWindows": false,
+            "showWindowsOnSpecialWorkspaces": true,
+            "shown": 8
+        }
+    },
+    "services": {
+        "useFahrenheit": false
+    },
+    "sidebar": {
+        "showOnHover": true
+    }
+}

@@ -1,0 +1,17 @@
+# Ignore system runtime & cache files
+*.log
+*.sock
+*.tmp
+*.cache
+
+# Ignore sensitive files & tokens
+.env
+*_secret*
+credentials*
+*.key
+*.pem
+
+# Ignore OS temporary files
+.DS_Store
+Thumbs.db
+customScripts/google-popup
