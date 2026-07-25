@@ -2,7 +2,7 @@ local vars = require("variables")
 local fn   = require("utils.functions")
 
 -- Launcher
-hl.bind("SUPER + SUPER_L", hl.dsp.global("caelestia:launcher"), { release = true })
+-- hl.bind("SUPER + SUPER_L", hl.dsp.global("caelestia:launcher"), { release = true })
 
 -- Misc
 hl.bind(vars.kbSession, hl.dsp.global("caelestia:session"))
@@ -48,8 +48,8 @@ for i = 1, 10 do
 end
 
 -- Go to workspace -1/+1
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "-1" }))
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "+1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "-1" }))
 hl.bind(vars.kbPrevWs, hl.dsp.focus({ workspace = "-1" }), { repeating = true })
 hl.bind(vars.kbNextWs, hl.dsp.focus({ workspace = "+1" }), { repeating = true })
 hl.bind("SUPER + Page_Up", hl.dsp.focus({ workspace = "-1" }), { repeating = true })

@@ -25,7 +25,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("~/customScripts/start_aw.sh")
     hl.exec_cmd("~/customScripts/startup.sh")
     hl.exec_cmd("hyprsunset")
-    hl.exec_cmd("wayscriber --daemon")
+    --hl.exec_cmd("wayscriber --daemon")
     hl.exec_cmd("python3 /home/nuwa/customScripts/google-popup/popup_server.py")
     hl.exec_cmd("/home/nuwa/customScripts/google-popup/hypr-popup-handler.sh")
 
