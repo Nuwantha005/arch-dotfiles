@@ -46,14 +46,14 @@ udisksctl mount -b /dev/nvme0n1p6 2>/dev/null && echo "  ✓ Work mounted"      
 #    Pre-focus the external monitor so the app opens there
 # ============================================================
 echo "[startup] Launching Firefox Nightly on HDMI-A-1..."
-hyprctl dispatch focusmonitor HDMI-A-1
+hyprctl dispatch "hl.dsp.focus({ monitor = 'HDMI-A-1' })"
 sleep 0.3
-hyprctl dispatch split:workspace 1
+hyprctl dispatch "hl.dsp.focus({ workspace = 1 })"
 sleep 0.3
 firefox-nightly &
 
 # ============================================================
-# 3. OBSIDIAN → special:magic
+# 3. OBSIDIAN → special:special
 #    Launch, wait for window to appear, then silently move it
 # ============================================================
 echo "[startup] Launching Obsidian..."
@@ -61,8 +61,8 @@ obsidian &
 addr=$(wait_for_window "obsidian")
 
 if [ -n "$addr" ]; then
-    hyprctl dispatch movetoworkspacesilent "special:magic,address:$addr"
-    echo "  ✓ Obsidian moved to special:magic"
+    hyprctl dispatch "hl.dsp.window.move({ workspace = 'special:special', window = 'address:$addr' })"
+    echo "  ✓ Obsidian moved to special:special"
 else
     echo "  ✗ Timed out waiting for Obsidian"
 fi
@@ -73,9 +73,9 @@ fi
 # ============================================================
 echo "[startup] Launching Thunar on eDP-1..."
 sleep 1
-hyprctl dispatch focusmonitor eDP-1
+hyprctl dispatch "hl.dsp.focus({ monitor = 'eDP-1' })"
 sleep 0.3
-hyprctl dispatch split:workspace 1   # explicitly leave special workspace
+hyprctl dispatch "hl.dsp.focus({ workspace = 1 })"   # explicitly leave special workspace
 sleep 0.5
 thunar &
 

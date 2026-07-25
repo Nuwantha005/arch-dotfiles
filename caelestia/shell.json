@@ -9,7 +9,8 @@
             "showDate": true
         },
         "status": {
-            "showAudio": false
+            "showAudio": false,
+            "showLockStatus": false
         },
         "workspaces": {
             "activeTrail": false,
@@ -19,6 +20,13 @@
             "showWindows": false,
             "showWindowsOnSpecialWorkspaces": true,
             "shown": 8
+        }
+    },
+    "launcher": {
+        "enableDangerousActions": false,
+        "useFuzzy": {
+            "apps": false,
+            "wallpapers": false
         }
     },
     "services": {
