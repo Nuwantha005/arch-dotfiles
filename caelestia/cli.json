@@ -1,5 +1,6 @@
 {
     "wallpaper": {
+        "no_smart": true,
         "postHook": "wal -i \"$WALLPAPER_PATH\" -n --cols16 2>/dev/null && pywalfox update 2>/dev/null"
     }
 }

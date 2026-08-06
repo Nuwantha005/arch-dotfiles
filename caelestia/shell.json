@@ -1,4 +1,15 @@
 {
+    "appearance": {
+        "padding": {
+            "scale": 1.1
+        },
+        "spacing": {
+            "scale": 1.1
+        },
+        "transparency": {
+            "enabled": true
+        }
+    },
     "bar": {
         "activeWindow": {
             "compact": true,
@@ -30,6 +41,7 @@
         }
     },
     "services": {
+        "smartScheme": false,
         "useFahrenheit": false
     },
     "sidebar": {
