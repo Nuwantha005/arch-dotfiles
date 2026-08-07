@@ -19,10 +19,36 @@
             "background": false,
             "showDate": true
         },
-        "status": {
-            "showAudio": false,
-            "showLockStatus": false
-        },
+        "statusIcons": [
+            {
+                "enabled": false,
+                "id": "lockStatus"
+            },
+            {
+                "enabled": false,
+                "id": "audio"
+            },
+            {
+                "enabled": false,
+                "id": "microphone"
+            },
+            {
+                "enabled": false,
+                "id": "kbLayout"
+            },
+            {
+                "enabled": true,
+                "id": "network"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "battery"
+            }
+        ],
         "workspaces": {
             "activeTrail": false,
             "maxWindowIcons": 5,
@@ -43,8 +69,5 @@
     "services": {
         "smartScheme": false,
         "useFahrenheit": false
-    },
-    "sidebar": {
-        "showOnHover": true
     }
 }
