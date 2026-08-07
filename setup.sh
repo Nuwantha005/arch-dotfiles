@@ -14,6 +14,7 @@ mkdir -p "$DOTFILES_DIR/foot"
 mkdir -p "$DOTFILES_DIR/kitty"
 mkdir -p "$DOTFILES_DIR/swaync"
 mkdir -p "$DOTFILES_DIR/applications"
+mkdir -p "$DOTFILES_DIR/zsh"
 
 # Function to safely move and symlink directories/files
 backup_and_link() {
@@ -39,6 +40,7 @@ backup_and_link "$HOME/.config/wofi" "$DOTFILES_DIR/wofi"
 backup_and_link "$HOME/.config/foot" "$DOTFILES_DIR/foot"
 backup_and_link "$HOME/.config/kitty" "$DOTFILES_DIR/kitty"
 backup_and_link "$HOME/.config/swaync" "$DOTFILES_DIR/swaync"
+backup_and_link "$HOME/.zshrc" "$DOTFILES_DIR/zsh/.zshrc"
 
 if [ -f "$HOME/.local/share/applications/vlc.desktop" ]; then
     cp "$HOME/.local/share/applications/vlc.desktop" "$DOTFILES_DIR/applications/"
