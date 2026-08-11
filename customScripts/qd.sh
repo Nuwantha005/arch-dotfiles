@@ -191,8 +191,13 @@ path=$(echo "$result" | tail -1 | cut -f2)
 
 case "$key" in
     ctrl-t)
-        # Open in Dolphin (detached)
-        setsid dolphin "$path" >/dev/null 2>&1 &
+        # Open in Dolphin (detached from terminal session)
+        if command -v hyprctl &>/dev/null && [ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+            escaped_path=$(printf '%s\n' "$path" | sed 's/"/\\"/g')
+            hyprctl dispatch "hl.dsp.exec_cmd(\"dolphin \\\"$escaped_path\\\"\")" >/dev/null 2>&1
+        else
+            (nohup dolphin "$path" </dev/null >/dev/null 2>&1 &)
+        fi
         ;;
     *)
         if $SHELL_MODE; then
