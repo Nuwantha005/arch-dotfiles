@@ -118,10 +118,11 @@ hl.bind(vars.kbWindowPip, function()
         end
     end
 end)
-hl.bind(vars.kbPinWindow, hl.dsp.window.pin())
-hl.bind(vars.kbWindowFullscreen, hl.dsp.window.fullscreen({ mode = "fullscreen" }))
-hl.bind(vars.kbWindowBorderedFullscreen, hl.dsp.window.fullscreen({ mode = "maximized" }))
-hl.bind(vars.kbToggleWindowFloating, hl.dsp.window.float())
+-- Default window action bindings (commented out to prevent conflict with Custom User Keybindings below)
+-- hl.bind(vars.kbPinWindow, hl.dsp.window.pin())
+-- hl.bind(vars.kbWindowFullscreen, hl.dsp.window.fullscreen({ mode = "fullscreen" }))
+-- hl.bind(vars.kbWindowBorderedFullscreen, hl.dsp.window.fullscreen({ mode = "maximized" }))
+-- hl.bind(vars.kbToggleWindowFloating, hl.dsp.window.float())
 -- hl.bind(vars.kbCloseWindow, hl.dsp.window.close())
 
 -- Special workspace toggles (commented out to avoid conflict with user bindings like SUPER+D)

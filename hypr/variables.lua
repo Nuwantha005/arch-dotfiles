@@ -76,11 +76,11 @@ return {
     kbMoveWindow               = "SUPER + Z",
     kbResizeWindow             = "SUPER + X",
     kbWindowPip                = "SUPER + ALT + backslash",
-    kbPinWindow                = "SUPER + P",
-    kbWindowFullscreen         = "SUPER + F",
+    kbPinWindow                = "SUPER + ALT + P",
+    kbWindowFullscreen         = "SUPER + G",
     kbWindowBorderedFullscreen = "SUPER + ALT + F",
     kbToggleWindowFloating     = "SUPER + ALT + space",
-    kbCloseWindow              = "SUPER + Q",
+    kbCloseWindow              = "SUPER + F",
 
     -- Special workspaces toggles
     kbSpecialWs                = "SUPER + S",
