@@ -2,14 +2,26 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    -- The old configs module is gone. 
-    -- Simply use require("nvim-treesitter.config") if customizing paths,
-    -- or configure built-in features directly.
+    -- 1. Initialize the modern config module
+    local ts_config = require("nvim-treesitter.config")
 
-    -- Example of the new basic initialization:
-    local configs = require("nvim-treesitter.config")
+    ts_config.setup({
+      -- Enables automatic parser compilation if you enter a file without it
+      auto_install = true, 
+      
+      -- Native highlighting configuration block
+      highlight = {
+        enable = true,
+      },
+      
+      -- Smart indentation based on the syntax tree nodes
+      indent = {
+        enable = true,
+      },
+    })
 
-    -- Note: Options like 'ensure_installed' have changed or moved.
-    -- Refer to the updated nvim-treesitter documentation for advanced flags.
+    -- 2. Explicitly tell Treesitter to install your required languages
+    -- (This replaces the old 'ensure_installed' array block)
+    require("nvim-treesitter").install({ "c", "cpp", "python", "lua", "vim", "vimdoc" })
   end
 }
