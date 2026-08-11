@@ -199,7 +199,7 @@ local mainMod = "SUPER"
 -- Core Apps
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + F", hl.dsp.window.close())
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind(mainMod .. " + B", hl.dsp.window.float())
 hl.bind(mainMod .. " + space", hl.dsp.global("caelestia:launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprctl dispatch pseudo"))

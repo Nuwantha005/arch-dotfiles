@@ -1,7 +1,7 @@
 #!/bin/bash
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║                       QD — Quick Directory Jump                           ║
-# ║  Pinned dirs + zoxide frecency  ·  fzf interface  ·  kitty/Thunar aware  ║
+# ║  Pinned dirs + zoxide frecency  ·  fzf interface  ·  kitty/Dolphin aware  ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
 #
 # USAGE (from shell function in .zshrc):
@@ -10,7 +10,7 @@
 #
 # IN-LAUNCHER KEYS:
 #   ENTER           — cd into directory (via shell function)
-#   SHIFT+ENTER     — open in Thunar
+#   SHIFT+ENTER     — open in Dolphin
 #   CTRL-Y          — copy path to clipboard (wl-copy)
 #   CTRL-E          — edit pins file in $EDITOR, auto-reload on save
 #   CTRL-R          — refresh list (re-reads pins + zoxide)
@@ -168,7 +168,7 @@ result=$("$BUILD_SCRIPT" | fzf \
     --prompt="  Jump › " \
     --pointer="▶" \
     --marker="✓" \
-    --header=$'  ENTER: cd   CTRL-T: Thunar   CTRL-Y: copy path\n  CTRL-E: edit pins   CTRL-R: refresh   CTRL-P: toggle preview' \
+    --header=$'  ENTER: cd   CTRL-T: Dolphin   CTRL-Y: copy path\n  CTRL-E: edit pins   CTRL-R: refresh   CTRL-P: toggle preview' \
     --color='fg:#cdd6f4,fg+:#f5e0dc,bg:#1e1e2e,bg+:#313244' \
     --color='hl:#f38ba8,hl+:#f38ba8,info:#cba6f7,marker:#a6e3a1' \
     --color='prompt:#89b4fa,spinner:#f5c2e7,pointer:#f5c2e7,header:#6c7086' \
@@ -191,8 +191,8 @@ path=$(echo "$result" | tail -1 | cut -f2)
 
 case "$key" in
     ctrl-t)
-        # Open in Thunar (detached)
-        setsid thunar "$path" >/dev/null 2>&1 &
+        # Open in Dolphin (detached)
+        setsid dolphin "$path" >/dev/null 2>&1 &
         ;;
     *)
         if $SHELL_MODE; then

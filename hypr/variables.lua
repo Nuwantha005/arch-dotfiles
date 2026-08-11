@@ -9,7 +9,7 @@ return {
     terminal                   = "foot",
     browser                    = "firefox",
     editor                     = "codium",
-    fileExplorer               = "thunar",
+    fileExplorer               = "dolphin",
     audioSettings              = "pavucontrol",
 
     -- Touchpad

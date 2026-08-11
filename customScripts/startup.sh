@@ -68,15 +68,15 @@ else
 fi
 
 # ============================================================
-# 4. THUNAR (file manager) → eDP-1 (laptop screen), workspace 1
+# 4. DOLPHIN (file manager) → eDP-1 (laptop screen), workspace 1
 #    Sleep first to let Hyprland settle after the special workspace move
 # ============================================================
-echo "[startup] Launching Thunar on eDP-1..."
+echo "[startup] Launching Dolphin on eDP-1..."
 sleep 1
 hyprctl dispatch "hl.dsp.focus({ monitor = 'eDP-1' })"
 sleep 0.3
 hyprctl dispatch "hl.dsp.focus({ workspace = 1 })"   # explicitly leave special workspace
 sleep 0.5
-thunar &
+dolphin &
 
 echo "[startup] Done."
