@@ -250,21 +250,13 @@ hl.bind("ALT + Print", hl.dsp.exec_cmd("hyprshot -m active -m output -o ~/Screen
 hl.bind("CTRL + SHIFT + Print", hl.dsp.exec_cmd("~/customScripts/latexocr-shot"))
 
 -- Lock screen & special workspace
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.local/share/quickshell-lockscreen/lock.sh"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("caelestia lock"))
 hl.bind(mainMod .. " + S", fn.toggle("specialws"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("hyprctl dispatch split:swapactiveworkspaces current +1"))
 
 -- Scripts & UI Toggles
-hl.bind("ALT + Tab", hl.dsp.exec_cmd("wlogout -b 2"))
-hl.bind("ALT + W", hl.dsp.exec_cmd("~/.config/hypr/Scripts/wallpaper.sh"))
-hl.bind("ALT + R", hl.dsp.exec_cmd("~/.config/swaync/refresh.sh"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("~/.config/hypr/Scripts/move_external_workspaces_to_laptop.sh"))
-
--- Theme management
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("~/.config/hypr/Scripts/theme-switcher.sh"))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("~/.config/hypr/Scripts/lockscreen-picker.sh"))
-hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("~/.config/hypr/Scripts/pfp-picker.sh"))
 
 -- Pypr scratchpads
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pypr toggle term"))
