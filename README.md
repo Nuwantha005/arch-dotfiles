@@ -104,3 +104,21 @@ chmod +x setup.sh
 ```
 
 The setup script cleanly backs up your existing directories and creates live symlinks from `~/dotfiles/` to `~/.config/`.
+
+---
+
+## 🔒 Private Keybindings & Local Customization
+
+To keep this dotfiles repository public while preventing sensitive shortcuts (such as emergency lockscreen unlock keybindings) from being exposed online, private keybindings are isolated in a local, untracked file:
+
+- **Public Template**: [`hypr/keybinds-private.lua.example`](hypr/keybinds-private.lua.example)
+- **Local Private File**: `hypr/keybinds-private.lua` *(Gitignored)*
+
+### Setting Up Private Shortcuts:
+1. Copy the template to create your local private keybindings file:
+   ```bash
+   cp hypr/keybinds-private.lua.example hypr/keybinds-private.lua
+   ```
+2. Open `hypr/keybinds-private.lua` and set your sensitive keybindings.
+3. Hyprland automatically loads `keybinds-private.lua` locally if it exists without committing your private key combinations to git.
+
