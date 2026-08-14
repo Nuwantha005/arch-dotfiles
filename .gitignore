@@ -10,6 +10,8 @@
 credentials*
 *.key
 *.pem
+keybinds-private.lua
+hypr/keybinds-private.lua
 
 # Ignore OS temporary files
 .DS_Store

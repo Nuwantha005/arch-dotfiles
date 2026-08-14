@@ -6,9 +6,9 @@ return {
     ------------------
 
     -- Apps
-    terminal                   = "foot",
-    browser                    = "firefox",
-    editor                     = "codium",
+    terminal                   = "kitty",
+    browser                    = "firefox-nightly",
+    editor                     = "nvim",
     fileExplorer               = "dolphin",
     audioSettings              = "pavucontrol",
 
@@ -35,10 +35,10 @@ return {
     shadowColour               = "rgba(" .. scheme.inversePrimary .. "10)",
 
     -- Gaps
-    workspaceGaps              = 20,
-    windowGapsIn               = 5,
-    windowGapsOut              = 10,
-    singleWindowGapsOut        = 20,
+    workspaceGaps              = 10,
+    windowGapsIn               = 2,
+    windowGapsOut              = 5,
+    singleWindowGapsOut        = 5,
 
     -- Window styling
     windowOpacity              = 0.95,
@@ -59,12 +59,16 @@ return {
     ------------------
 
     -- Workspaces
-    kbMoveWinToWs              = "SUPER + ALT",
+    kbMoveWinToWs              = "SUPER + SHIFT",
     kbMoveWinToWsGroup         = "CTRL + SUPER + ALT",
     kbGoToWs                   = "SUPER",
     kbGoToWsGroup              = "CTRL + SUPER",
+    kbSwapWs                   = "SUPER + ALT",
     kbNextWs                   = "CTRL + SUPER + Right",
     kbPrevWs                   = "CTRL + SUPER + Left",
+    kbFocusMonitor             = "SUPER + Tab",
+    kbSwapActiveWorkspaces     = "SUPER + X",
+    kbGrabRogueWindows         = "SUPER + SHIFT + G",
 
     -- Window Group
     kbWindowGroupCycleNext     = "ALT + TAB",
@@ -73,33 +77,43 @@ return {
     kbToggleGroup              = "SUPER + Comma",
 
     -- Window Action
-    kbMoveWindow               = "SUPER + Z",
-    kbResizeWindow             = "SUPER + X",
-    kbWindowPip                = "SUPER + ALT + backslash",
-    kbPinWindow                = "SUPER + ALT + P",
-    kbWindowFullscreen         = "SUPER + G",
-    kbWindowBorderedFullscreen = "SUPER + ALT + F",
-    kbToggleWindowFloating     = "SUPER + ALT + space",
     kbCloseWindow              = "SUPER + F",
+    kbCloseWindowAlt           = "ALT + Q",
+    kbToggleWindowFloating     = "SUPER + B",
+    kbWindowFullscreen         = "SUPER + G",
+    kbPseudo                   = "SUPER + P",
+    kbToggleSplit              = "SUPER + N",
+    kbWindowPip                = "SUPER + ALT + backslash",
 
-    -- Special workspaces toggles
+    -- Special Workspaces & Pyprland
     kbSpecialWs                = "SUPER + S",
-    kbSystemMonitorWs          = "CTRL + SHIFT + Escape",
-    kbMusicWs                  = "SUPER + M",
-    kbCommunicationWs          = "SUPER + D",
-    kbTodoWs                   = "SUPER + R",
+    kbMoveWinToSpecialWs       = "SUPER + SHIFT + S",
+    kbPyprTerm                 = "SUPER + R",
+    kbPyprMusic                = "SUPER + Q",
+    kbPyprTaskbar              = "SUPER + T",
+    kbPyprExpose               = "SUPER + C",
 
-    -- Apps
-    kbTerminal                 = "SUPER + T",
+    -- Apps & Launchers
+    kbTerminal                 = "SUPER + D",
     kbBrowser                  = "SUPER + W",
     kbEditor                   = "SUPER + C",
     kbFileExplorer             = "SUPER + E",
+    kbLauncher                 = "SUPER + space",
+    kbQuickDir                 = "ALT + space",
+    kbSearch                   = "SUPER + ALT + space",
+    kbGoogleSearch             = "SUPER + SHIFT + space",
 
-    -- Misc
+    -- System, Audio & Utilities
     kbSession                  = "CTRL + ALT + Delete",
     kbShowSidebar              = "SUPER + N",
     kbClearNotifs              = "CTRL + ALT + C",
     kbShowPanels               = "SUPER + K",
-    kbLock                     = "SUPER + L",
+    kbLock                     = "SUPER + O",
     kbRestoreLock              = "SUPER + ALT + L",
+    kbEmergencyUnlock          = "SUPER + CTRL + ALT + BackSpace",
+    kbAudioMuteToggle          = "SUPER + SHIFT + M",
+    kbWayscriber               = "SUPER + Z",
+    kbExpoToggle               = "SUPER + A",
+    kbMergeToFirefox           = "SUPER + M",
 }
+

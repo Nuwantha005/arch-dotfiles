@@ -1,0 +1,13 @@
+-- Example private keybindings template.
+-- Copy this file to `keybinds-private.lua` (which is gitignored) and customize your sensitive shortcuts.
+
+local vars = require("variables")
+
+-- Restore lock
+hl.bind(vars.kbRestoreLock or "SUPER + ALT + L", function()
+    hl.dispatch(hl.dsp.exec_cmd("caelestia shell -d"))
+    hl.dispatch(hl.dsp.global("caelestia:lock"))
+end)
+
+-- Emergency unlock (works while locked, bypasses stuck lock screens)
+hl.bind(vars.kbEmergencyUnlock or "SUPER + CTRL + ALT + BackSpace", hl.dsp.global("caelestia:unlock"), { locked = true })
