@@ -16,6 +16,7 @@ mkdir -p "$DOTFILES_DIR/swaync"
 mkdir -p "$DOTFILES_DIR/applications"
 mkdir -p "$DOTFILES_DIR/zsh"
 mkdir -p "$DOTFILES_DIR/nvim"
+mkdir -p "$DOTFILES_DIR/mpv"
 
 # Function to safely move and symlink directories/files
 backup_and_link() {
@@ -24,8 +25,15 @@ backup_and_link() {
 
     if [ -e "$src" ] && [ ! -L "$src" ]; then
         echo "📦 Backing up $src -> $dest"
-        cp -r "$src"/* "$dest"/ 2>/dev/null || cp "$src" "$dest"/
-        rm -rf "$src"
+        if [ -d "$src" ]; then
+            mkdir -p "$dest"
+            cp -r "$src"/* "$dest"/ 2>/dev/null || cp "$src" "$dest"/
+            rm -rf "$src"
+        else
+            mkdir -p "$(dirname "$dest")"
+            cp "$src" "$dest"
+            rm -f "$src"
+        fi
         ln -s "$dest" "$src"
         echo "🔗 Symlinked $src -> $dest"
     elif [ -L "$src" ]; then
@@ -43,6 +51,8 @@ backup_and_link "$HOME/.config/kitty" "$DOTFILES_DIR/kitty"
 backup_and_link "$HOME/.config/swaync" "$DOTFILES_DIR/swaync"
 backup_and_link "$HOME/.zshrc" "$DOTFILES_DIR/zsh/.zshrc"
 backup_and_link "$HOME/.config/nvim" "$DOTFILES_DIR/nvim"
+backup_and_link "$HOME/.config/mpv" "$DOTFILES_DIR/mpv"
+backup_and_link "$HOME/.config/mimeapps.list" "$DOTFILES_DIR/mimeapps.list"
 
 if [ -f "$HOME/.local/share/applications/vlc.desktop" ]; then
     cp "$HOME/.local/share/applications/vlc.desktop" "$DOTFILES_DIR/applications/"

@@ -7,6 +7,8 @@
 # Give Hyprland a moment to fully initialize before dispatching
 sleep 2
 
+XDG_MENU_PREFIX=plasma- kbuildsycoca6 --noincremental
+
 # ---- Helper: poll hyprctl until a window with matching class appears ----
 # Returns the window address, or empty string on timeout
 wait_for_window() {

@@ -295,5 +295,5 @@ bindkey -s '^[d' 'qd\n'
 export PATH="$HOME/.local/bin:$PATH"  # lunar dev scripts
 
 # Custom Aliases
-
 alias imcat="kitten icat"
+alias fcp='kitty +kitten choose-files | tee /dev/tty | wl-copy'
