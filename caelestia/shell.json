@@ -59,6 +59,30 @@
             "shown": 8
         }
     },
+    "general": {
+        "idle": {
+            "inhibitWhenAudio": true,
+            "inhibitWhenCharging": false,
+            "lockBeforeSleep": true,
+            "timeouts": [
+                {
+                    "idleAction": "lock",
+                    "timeout": 600
+                },
+                {
+                    "idleAction": "dpms off",
+                    "returnAction": "dpms on",
+                    "timeout": 900
+                },
+                {
+                    "idleAction": [
+                        "suspend"
+                    ],
+                    "timeout": 1800
+                }
+            ]
+        }
+    },
     "launcher": {
         "enableDangerousActions": false,
         "useFuzzy": {
