@@ -297,3 +297,16 @@ export PATH="$HOME/.local/bin:$PATH"  # lunar dev scripts
 # Custom Aliases
 alias imcat="kitten icat"
 alias fcp='kitty +kitten choose-files | tee /dev/tty | wl-copy'
+
+# Fuzzy search function
+xfuzzy() {
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case"
+    
+    fzf --ansi --disabled --query "$1" \
+        --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
+        --delimiter : \
+        --preview 'bat --style=numbers --color=always --highlight-line {2} {1} --line-range +{2}-20/40 2>/dev/null || awk -v ln={2} "NR >= ln-10 && NR <= ln+20 {print NR \": \" \$0}" {1}' \
+        --bind "enter:execute(nvim +{2} {1} < /dev/tty)+abort"
+}
+
+
