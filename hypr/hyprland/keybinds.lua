@@ -209,8 +209,8 @@ hl.bind("SUPER + SHIFT + ALT + R", hl.dsp.exec_cmd("caelestia record -r"))
 ----------------------------------------------
 -- 9. Clipboard & Utilities
 ----------------------------------------------
-hl.bind("SUPER + V", hl.dsp.exec_cmd("~/customScripts/clipboard_picker.sh"))
-hl.bind("SUPER + ALT + V", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard -d"))
+hl.bind("SUPER + V", hl.dsp.global("caelestia:clipboard"))
+hl.bind("SUPER + ALT + V", hl.dsp.global("caelestia:clipboard"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("~/dotfiles/customScripts/emoji_picker.sh"))
 hl.bind("SUPER + Period", hl.dsp.exec_cmd("pkill fuzzel || caelestia emoji -p"))
 hl.bind(
